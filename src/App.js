@@ -30,7 +30,9 @@ class App extends React.Component {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
   };
+  results = () =>{
 
+  }
 
   render() {
     return (
@@ -49,10 +51,11 @@ class App extends React.Component {
           <div>
             <Header>You Chose: {this.state.userChoice}</Header>
             <Header>Computer Chose: {this.state.compChoice}</Header>
+            
+            <GameResults choice = {this.state.userChoice} comp = {this.state.compChoice}/>
           </div>
         )}
        
-        <GameResults />
       </Container>
     );
   }

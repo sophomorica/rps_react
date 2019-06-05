@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.header{
+  text-align: center;
+}
+.container{
+  text-align: center;
+  width: 760px;
+  padding-top: 25px;
+}
+.game_div{
+  display:flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}

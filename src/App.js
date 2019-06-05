@@ -4,7 +4,7 @@ import rock from "./images/rock.jpeg"
 import paper from "./images/paper.png"
 import scissors from "./images/scissors.jpeg"
 import { Container, Header, Button } from "semantic-ui-react";
-import OptionBox from "./OptionBox"
+import OptionBox from "./components/OptionBox"
 
 class App extends React.Component {
   state = {userChoice: null, compChoice: null, showGame: false,}

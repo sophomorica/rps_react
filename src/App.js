@@ -5,7 +5,7 @@ import paper from "./images/paper.png"
 import scissors from "./images/scissors.jpeg"
 import { Container, Header, Button } from "semantic-ui-react";
 import OptionBox from "./components/OptionBox"
-
+import GameResults from "./components/GameResults"
 class App extends React.Component {
   state = {userChoice: null, compChoice: null, showGame: false,}
 
@@ -47,7 +47,8 @@ class App extends React.Component {
         <OptionBox name = "paper" img={paper} choice={this.setChoice} />
         <OptionBox name = "scissors" img={scissors} choice={this.setChoice} />
        </div>}
-       
+       {this.state.userChoice && <div><Header>You Chose: {this.state.userChoice}</Header><Header>Computer Chose: {this.state.compChoice}</Header></div>}
+       <GameResults/>
       </Container>
     );
   }

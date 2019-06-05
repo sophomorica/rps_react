@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Container,Header  } from "semantic-ui-react";
+import {  Container,Header  } from "semantic-ui-react";
 
 
 
@@ -7,7 +7,7 @@ class GameResults extends React.Component{
   
   state = {wins: 0, losses: 0, ties: 0}
   results = () =>{
-    
+
   }
   render(){
     return(

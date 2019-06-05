@@ -9,22 +9,43 @@ import OptionBox from "./components/OptionBox"
 class App extends React.Component {
   state = {userChoice: null, compChoice: null, showGame: false,}
 
+  setChoice = (choice) =>{
+    this.setState(state => {
+      return {userChoice: choice, compChoice: this.randomChoice()}
+    })
+  }
+ 
+    
+  //  componentDidMount(random){
+  //    this.setState(state =>{
+  //      return{compChoice: this.randomChoice(random)}
+  //    })
+  //  }
+  
+  
+  toggleGame = () =>{
 
-  toggleGame = () =>[
     this.setState( state => {
       return {showGame: !this.state.showGame}
     })
-  ]
+  }
+  randomChoice = () =>{
+    const choices = ["rock", "paper", "scissors"]
+    return choices[Math.floor(Math.random() * choices.length)]
+
+  }
+  
   render() {
     return (
       <Container>
         <Header as="h1">React Rock Paper Scissors</Header>
         <Button onClick={this.toggleGame}>Let's Play</Button>
+        <hr />
         {this.state.showGame &&  <div className="game_div">
 
-        <OptionBox name = "rock" img={rock}/>
-        <OptionBox name = "paper" img={paper}/>
-        <OptionBox name = "scissors" img={scissors}/>
+        <OptionBox name = "rock" img={rock} choice={this.setChoice}  />
+        <OptionBox name = "paper" img={paper} choice={this.setChoice} />
+        <OptionBox name = "scissors" img={scissors} choice={this.setChoice} />
        </div>}
        
       </Container>

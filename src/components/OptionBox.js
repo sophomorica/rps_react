@@ -10,9 +10,10 @@ class OptionBox extends React.Component{
         <Image
         src={this.props.img}
         size="small"
+        onClick={()=> this.props.choice(this.props.name)}
         /> 
         <hr/>
-        <Button onClick={()=> this.props.choice(this.props.name)}>{this.props.name}</Button>
+       
         
     </Container>
         )

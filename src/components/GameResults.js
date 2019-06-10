@@ -81,9 +81,12 @@ const GameResults = (props) =>{
           {resultsComp()}
           </div>
         </div>
+        <div className="results">
+
         <Header>Wins: {wins}</Header>
         <Header>Losses: {losses}</Header>
         <Header>Ties: {ties}</Header>
+        </div>
       </Container>
     );
   }

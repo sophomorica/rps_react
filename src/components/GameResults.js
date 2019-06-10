@@ -32,18 +32,7 @@ class GameResults extends React.Component {
     }
   };
 
-  // logic = () => {
-  //   const rules = {
-  //     rock: "scissors",
-  //     paper: "rock",
-  //     scissors: "paper"
-  //   };
-  //   if (this.props.choice === this.props.comp) {
-  //     return <Header>Tie</Header>;
-  //   } else if (this.props.comp === this.props.choice[rules]) {
-  //     return <Header>Lose</Header>
-  //   } else return <Header>Win</Header>;
-  // };
+
   
  logic = () => {
   const rules = {

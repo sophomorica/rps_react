@@ -6,7 +6,6 @@ import { Container, Header, Image } from "semantic-ui-react";
 
 const GameResults = () =>{
 
-    state = { outcome: null, wins: 0, losses: 0, ties: 0 };
     const [outcome, setOutcome] = useState(null)
     const [wins, setWins] = useState(0)
     const [losses, setLosses] = useState(0)
@@ -24,53 +23,55 @@ const GameResults = () =>{
             }
           };
           
-          resultsComp = () => {
-            switch (this.props.comp) {
-              case "rock":
-                return <Image src={rock} size="small" />;
-                break;
-                case "paper":
-                  return <Image src={paper} size="small" />;
-                  break;
-                  case "scissors":
-                    return <Image src={scissors} size="small" />;
-                  }
-                };
-                
+  resultsComp = () => {
+    switch (this.props.comp) {
+      case "rock":
+        return <Image src={rock} size="small" />;
+        break;
+        case "paper":
+          return <Image src={paper} size="small" />;
+          break;
+          case "scissors":
+            return <Image src={scissors} size="small" />;
+          }
+        };
+        
   
-     const  logic = () => {
-        const rules = {
-          "Rock": "Scissors",
-          "Paper": "Rock",
-          "Scissors": "Paper"
-        }
-        const {choice, comp} = this.props
-        if (choice === comp) {
-          return <Header>Tie</Header>;
-          //this.setState({outcome: "Tie"})
-        } else if (comp === rules[choice]) {
-          //this.setState({outcome: "Win", wins: (this.state.wins + 1) })
-          return <Header>you are a big lose</Header>;
-        } else {
-          return <Header>win</Header>
-          //this.setState({outcome: "Lose", losses: (this.state.losses + 1) })
-        }
+    const logic = (choice, comp) =>{
+
+      if (choice === comp) {
+        return <Header>Tie</Header>;
       }
-      render() {
+        if (choice === 'rock'){
+        if (comp ==='paper'){
+          return <Header>Lose</Header>
+        }return <Header>Win</Header>
+      }
+      if (choice === 'paper') {
+        if (comp === 'scissors') {
+          return <Header>Lose</Header>
+        } else {
+          return <Header>Win</Header>
+            }
+            }
+      
+        
+      }
+      
         return (
           <Container>
         <div>
-          {this.logic()}
-          {this.results()}
-          {this.resultsComp()}
+          {logic()}
+          {results()}
+          {resultsComp()}
         </div>
-        <Header>Wins: {this.state.wins}</Header>
-        <Header>Losses: {this.state.losses}</Header>
-        <Header>Ties: {this.state.ties}</Header>
+        <Header>Wins: {setWins(wins +1)}</Header>
+        <Header>Losses: {setLosses(losses + 1 )}</Header>
+        <Header>Ties: {setTies(ties +1)}</Header>
       </Container>
     );
   }
-}
 
-}
+
+
 export default GameResults;

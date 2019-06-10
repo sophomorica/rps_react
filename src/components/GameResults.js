@@ -4,6 +4,7 @@ import paper from "../images/paper.png";
 import scissors from "../images/scissors.jpeg";
 import { Container, Header, Image } from "semantic-ui-react";
 import App from "../App"
+import "../gameCss.css"
 
 const GameResults = (props) =>{
 
@@ -37,9 +38,11 @@ const GameResults = (props) =>{
           }
         };
         
+      
+        // useEffect((logic)=>{
   
+        // })
     const logic = () =>{
-
       if (props.choice === props.comp) {
         return <Header>Tie</Header>;
       }
@@ -64,16 +67,19 @@ const GameResults = (props) =>{
           return<Header>Win</Header>
         }
       }
-      
+
         
       }
       
         return (
           <Container>
-        <div>
+        <div className="results">
           {logic()}
+          <div className= "pictures">
+
           {results()}
           {resultsComp()}
+          </div>
         </div>
         <Header>Wins: {wins}</Header>
         <Header>Losses: {losses}</Header>

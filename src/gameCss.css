@@ -1,0 +1,8 @@
+.results{
+  display:flex;
+  flex-direction: column;
+}
+.pictures{
+  display: flex;
+  justify-content: space-around;
+}

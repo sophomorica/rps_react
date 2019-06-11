@@ -53,27 +53,26 @@ const GameResults = (props) =>{
         setOutcome("Tie");
       }
       if (props.choice === 'rock') {
-        debugger
         if (props.comp ==='paper'){
-          return <Header>Lose</Header>
+          setLosses(losses +1 )
         }
-        return <Header>Win</Header>
+        setWins(wins +1 )
       }
       if (props.choice === 'paper') {
-        debugger
+       
         if (props.comp === 'scissors') {
-          return <Header>Lose</Header>
+          setLosses(losses +1 )
 
         } else {
-          return <Header>Win</Header>
+          setWins(wins +1 )
             }
             }
       if(props.choice === 'scissors'){
-        debugger
+       
         if (props.comp ==='rock'){
-          return <Header>Lose</Header>
+          setLosses(losses +1 )
         }else{
-          return<Header>Win</Header>
+          setWins(wins +1 )
         }
       }
 

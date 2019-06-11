@@ -24,7 +24,7 @@ const App =  () => {
     
       setUserChoice(choice)
       setCompChoice(randomChoice())
-  
+      
   };
 
   return (

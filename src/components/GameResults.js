@@ -12,6 +12,13 @@ const GameResults = (props) =>{
     const [wins, setWins] = useState(0)
     const [losses, setLosses] = useState(0)
     const [ties, setTies] = useState(0)
+
+    useEffect( () => {
+      console.log(props.comp)
+      if (props.comp !== "")
+        logic();
+    }, [props.comp])
+
     const results = () => {
       switch (props.choice) {
         case "rock":
@@ -39,20 +46,21 @@ const GameResults = (props) =>{
         };
         
       
-        // useEffect((logic)=>{
-  
-        // })
+      
     const logic = () =>{
       if (props.choice === props.comp) {
-        return <Header>Tie</Header>;
+        setTies(ties + 1)
+        setOutcome("Tie");
       }
-        if (props.choice === 'rock'){
+      if (props.choice === 'rock') {
+        debugger
         if (props.comp ==='paper'){
           return <Header>Lose</Header>
         }
         return <Header>Win</Header>
       }
       if (props.choice === 'paper') {
+        debugger
         if (props.comp === 'scissors') {
           return <Header>Lose</Header>
 
@@ -61,6 +69,7 @@ const GameResults = (props) =>{
             }
             }
       if(props.choice === 'scissors'){
+        debugger
         if (props.comp ==='rock'){
           return <Header>Lose</Header>
         }else{
@@ -74,7 +83,8 @@ const GameResults = (props) =>{
         return (
           <Container>
         <div className="results">
-          {logic()}
+          {/* {logic()} */}
+          <Header>{outcome}</Header>
           <div className= "pictures">
 
           {results()}
